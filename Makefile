@@ -14,8 +14,6 @@ SOURCE_PATH = sources/functions/
 
 HEADER = -I includes/
 
-#GET_NEXT_LINE_HEADER = -I sources/get_next_line/includes/
-
 SOURCES = \
 	ft_atoi.c \
 	ft_bzero.c \
@@ -61,6 +59,7 @@ SOURCES = \
 	ft_lstnew_bonus.c \
 	ft_lstsize_bonus.c \
 	ft_math_sqrt.c \
+	ft_printf.c \
 
 OBJECTS	:= $(addprefix $(OBJECTS_PATH)/, $(SOURCES:%.c=%.o))
 
@@ -74,9 +73,7 @@ $(OBJECTS_PATH)/%.o: $(SOURCE_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(HEADER)
 
 $(NAME): $(OBJECTS)
-	ar x $(GET_NEXT_LINE)
-	ar rcs $(NAME) *.o $?
-	rm *o
+	ar -rcT $(NAME) $(GET_NEXT_LINE) $?
 
 clean:
 	rm -rf $(OBJECTS_PATH)
