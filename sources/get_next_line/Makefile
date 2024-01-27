@@ -21,7 +21,7 @@ $(OBJECTS_PATH)/%.o: $(SOURCE_PATH)%.c
 	$(CC) $(CFLAGS) -D BUFFER_SIZE=10 -c $< -o $@
 
 $(NAME): $(OBJECTS)
-	ar rcs $(NAME) $?
+	ar -rcT $(NAME) $?
 	
 clean:
 	rm -rf $(OBJECTS_PATH)

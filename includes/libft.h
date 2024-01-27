@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 13:02:21 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/24 17:01:02 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/01/27 14:14:26 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include "../sources/get_next_line/includes/get_next_line.h"
+# include "../sources/bst/includes/bst.h"
 
 typedef struct s_list
 {

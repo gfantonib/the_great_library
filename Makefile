@@ -1,8 +1,10 @@
 NAME = libft.a
 
 GET_NEXT_LINE = sources/get_next_line/get_next_line.a
-
 GET_NEXT_LINE_PATH = sources/get_next_line/
+
+BST = sources/bst/bst.a
+BST_PATH = sources/bst/
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -63,25 +65,30 @@ SOURCES = \
 
 OBJECTS	:= $(addprefix $(OBJECTS_PATH)/, $(SOURCES:%.c=%.o))
 
-all: $(GET_NEXT_LINE) $(NAME)
+all: $(GET_NEXT_LINE) $(BST) $(NAME)
 
 $(GET_NEXT_LINE):
 	make -C $(GET_NEXT_LINE_PATH)
 
+$(BST):
+	make -C $(BST_PATH)
+
 $(OBJECTS_PATH)/%.o: $(SOURCE_PATH)%.c
 	$(MK) $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@ $(HEADER)
+	$(CC) $(CFLAGS) -o $@ -c $< $(HEADER)
 
 $(NAME): $(OBJECTS)
-	ar -rcT $(NAME) $(GET_NEXT_LINE) $?
+	ar -rcT $(NAME) $(GET_NEXT_LINE) $(BST) $?
 
 clean:
 	rm -rf $(OBJECTS_PATH)
 	make clean -C $(GET_NEXT_LINE_PATH)
+	make clean -C $(BST_PATH)
 
 fclean: clean
 	rm -f $(NAME)
 	make fclean -C $(GET_NEXT_LINE_PATH)
+	make fclean -C $(BST_PATH)
 
 re: fclean all
 
