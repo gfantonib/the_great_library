@@ -1,20 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/22 13:02:21 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/29 10:09:36 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/07/27 11:21:10 by gfantoni          #+#    #+#             */
+/*   Updated: 2024/01/29 09:58:19 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "functions.h"
 
-#include "../sources/functions/includes/functions.h"
-#include "../sources/get_next_line/includes/get_next_line.h"
-#include "../sources/bst/includes/bst.h"
+char	*ft_strnstr(const char *big, const char *little, size_t len)
+{
+	size_t	i;
+	int		j;
 
-#endif
+	i = 0;
+	if (*little == 0)
+		return ((char *) big);
+	while (i < len && big[i] != '\0')
+	{
+		if (big[i] == little[0])
+		{
+			j = 0;
+			while (big[i + j] == little[j] && (i + j < len))
+			{
+				if (little[j + 1] == '\0')
+					return ((char *)&big[i]);
+				j++;
+			}
+		}
+		i++;
+	}
+	return (NULL);
+}

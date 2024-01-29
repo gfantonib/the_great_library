@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/22 13:02:21 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/29 10:09:36 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/08/10 16:09:17 by gfantoni          #+#    #+#             */
+/*   Updated: 2024/01/29 09:58:19 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "functions.h"
 
-#include "../sources/functions/includes/functions.h"
-#include "../sources/get_next_line/includes/get_next_line.h"
-#include "../sources/bst/includes/bst.h"
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*last_node;
 
-#endif
+	if (*lst == NULL)
+	{
+		*lst = new;
+		return ;
+	}
+	last_node = ft_lstlast(*lst);
+	last_node->next = new;
+}

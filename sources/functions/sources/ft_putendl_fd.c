@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/22 13:02:21 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/29 10:09:36 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/08/02 10:49:32 by gfantoni          #+#    #+#             */
+/*   Updated: 2024/01/29 09:58:19 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "functions.h"
 
-#include "../sources/functions/includes/functions.h"
-#include "../sources/get_next_line/includes/get_next_line.h"
-#include "../sources/bst/includes/bst.h"
-
-#endif
+void	ft_putendl_fd(char *s, int fd)
+{
+	while (*s)
+	{
+		ft_putchar_fd(*s, fd);
+		s++;
+	}
+	ft_putchar_fd('\n', fd);
+}

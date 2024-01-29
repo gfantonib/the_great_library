@@ -6,18 +6,17 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 16:17:51 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/27 13:51:42 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:44:07 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BST_H
 # define BST_H
 
-# include <stdio.h>
 # include <stdlib.h>
-# include <time.h>
 # include <stdbool.h>
 # include <limits.h>
+# include "../../functions/includes/functions.h"
 
 typedef struct s_bst
 {

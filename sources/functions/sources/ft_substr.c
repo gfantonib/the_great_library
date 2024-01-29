@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/22 13:02:21 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/29 10:09:36 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/07/28 09:30:27 by gfantoni          #+#    #+#             */
+/*   Updated: 2024/01/29 09:58:19 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "functions.h"
 
-#include "../sources/functions/includes/functions.h"
-#include "../sources/get_next_line/includes/get_next_line.h"
-#include "../sources/bst/includes/bst.h"
+char	*ft_substr(const char *s, unsigned int start, size_t len)
+{
+	char	*ret;
 
-#endif
+	if (!s)
+		return (0);
+	if (ft_strlen(s) < start)
+		return ((char *)ft_calloc(1, sizeof(char)));
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	ret = malloc(sizeof(char) * (len + 1));
+	if (!ret)
+		return (0);
+	ft_strlcpy(ret, s + start, len + 1);
+	return (ret);
+}

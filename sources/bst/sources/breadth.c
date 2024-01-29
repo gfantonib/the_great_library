@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 11:03:23 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/27 15:22:09 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:36:15 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	bst_simple_print(t_bst *node, int depth)
 	i = 0;
 	while (i < (depth * 3))
 	{
-		printf(" ");
+		ft_printf(" ");
 		i++;
 	}
-	printf("%d\n", node->key);
+	ft_printf("%d\n", node->key);
 	bst_simple_print(node->left_child, depth + 1);
 	bst_simple_print(node->right_child, depth + 1);
 }
@@ -52,7 +52,7 @@ static void	bst_breadth(t_bst **queue, int front, int total, int rear)
 {
 	while (front < total)
 	{
-		printf("%d ", queue[front]->key);
+		ft_printf("%d ", queue[front]->key);
 		if (queue[front]->left_child != NULL)
 		{
 			queue[rear] = queue[front]->left_child;
