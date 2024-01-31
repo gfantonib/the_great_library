@@ -9,12 +9,12 @@ MK = mkdir -p
 SOURCE_PATH = sources/
 
 SRCS	= \
-			create_node.c \
+			nodes.c \
 			check_node.c \
 			min_max.c \
 			traversal.c \
 			breadth.c \
-			del_utils.c
+			del_utils.c \
 
 OBJECTS_PATH = objects
 
