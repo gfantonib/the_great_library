@@ -1,6 +1,6 @@
 NAME = functions.a
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 MK = mkdir -p
 

@@ -1,6 +1,6 @@
 NAME = get_next_line.a
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g3
 
 MK = mkdir -p
 
