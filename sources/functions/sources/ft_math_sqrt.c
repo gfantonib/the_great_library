@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 18:07:22 by gfantoni          #+#    #+#             */
-/*   Updated: 2024/01/29 09:58:19 by gfantoni         ###   ########.fr       */
+/*   Updated: 2024/03/06 10:14:08 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 long	ft_math_sqrt(long nb, long kick)
 {
 	long	result;
-	long	iteration;
 
-	iteration = 0;
 	if (nb > 0)
 	{
 		while (1)
