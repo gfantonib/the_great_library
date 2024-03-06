@@ -3,7 +3,6 @@ NAME = libft.a
 GET_NEXT_LINE = sources/get_next_line/get_next_line.a
 GET_NEXT_LINE_PATH = sources/get_next_line/
 
-
 FUNCTIONS = sources/functions/functions.a
 FUNCTIONS_PATH = sources/functions/
 
